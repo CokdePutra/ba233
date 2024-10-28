@@ -23,7 +23,7 @@ footer a {
 
 nav {
   width: 250px;
-  float: left;
+  float: right;
 }
 
 nav ul {
@@ -52,7 +52,7 @@ article {
 /* anak dari elemen article */
 article > * {
   padding: 10px;
-  margin-left: 250px;
+  margin-right: 250px;
   background-color: #fff;
   text-align: justify;
 }
