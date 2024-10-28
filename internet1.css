@@ -3,26 +3,79 @@
 body {
   background-color: #cdf;
   font-family: Nunito;
-  width: 700px;
+  width: 800px;
   margin: auto;
 }
 
-header {
+header,
+footer {
   text-align: center;
-  background-color: #568;
+  background-color: #457;
   color: #fff;
   padding: 10px;
 }
 
-header a {
+header a,
+footer a {
   text-decoration: none;
-  color: #f98;
+  color: #fba;
 }
 
 nav {
-  background-color: #ff0;
+  width: 250px;
+  float: left;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #013;
+  display: block;
+  padding: 10px;
+  border-bottom: 1px dotted #89b;
+}
+
+nav a:hover {
+  background-color: #fba;
+  color: #910;
+  border-left: 10px solid #910;
 }
 
 article {
-  background-color: #9f8;
+  background-color: #abd;
+}
+
+/* anak dari elemen article */
+article > * {
+  padding: 10px;
+  margin-left: 250px;
+  background-color: #fff;
+  text-align: justify;
+}
+
+#sec02 figure {
+  float: left;
+}
+
+#sec02 figcaption {
+  text-align: center;
+}
+
+#sec04 table {
+  border-collapse: collapse;
+}
+
+#sec04 td,
+#sec04 th {
+  border: 1px solid #89b;
+  padding: 10px;
+}
+
+#sec04 th {
+  background-color: #457;
+  color: #fff;
 }
