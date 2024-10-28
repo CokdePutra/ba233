@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Nunito;
+}
+
+html,
+body,
+header {
+  height: 100%;
+}
+
+header {
+  background-image: url('img/wallpaper1.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+header h1 {
+  color: #fff;
+  padding: 20px;
+  padding-top: 20%;
+  font-size: 3em;
+}
+header p {
+  color: #fff;
+  padding: 20px;
+}
+
+header a {
+  color: #fff;
+}
+
+nav {
+  color: #fff;
+  background-color: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+nav li {
+  display: inline-block;
+  padding: 10px;
+}
+
+nav a,
+footer a {
+  color: #999;
+  text-decoration: none;
+}
+
+nav a:hover,
+footer a:hover {
+  color: #fff;
+}
+
+p,
+#sec05 li {
+  padding: 5px 0;
+}
+article > * {
+  text-align: center;
+  font-size: 1.5em;
+  padding: 200px;
+
+}
+
+#sec00,
+#sec02 {
+  background-color: #222;
+  color: #ddd;
+}
+
+#sec01 {
+  background-image: url('img/wallpaper2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #fff;
+}
+
+#sec03 {
+  background-image: url('img/wallpaper3.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+#sec05 {
+  background-image: url('img/wallpaper4.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+footer {
+  background-color: #000;
+  color: #fff;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+
+#sec04 table {
+  border-collapse: collapse;
+}
+
+#sec04 td, #sec04 th {
+  border: 1px solid #999;
+  text-align: justify;
+  padding: 10px;
+}
+
+#sec04 th {
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+}
+
+#sec04 tr:hover {
+  background-color: #eee;
+}
+
+#sec05 ul {
+  text-align: justify;
+}
