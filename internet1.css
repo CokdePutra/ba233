@@ -1,74 +1,81 @@
-@import url("https://fonts.googleapis.com/css2?family=Jura:wght@500&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 
 body {
   background-color: #cdf;
-  font-family: nunito;
+  font-family: Nunito;
   width: 800px;
   margin: auto;
 }
-header {
+
+header,
+footer {
   text-align: center;
-  background-color: #679;
+  background-color: #457;
   color: #fff;
   padding: 10px;
 }
-header a {
+
+header a,
+footer a {
   text-decoration: none;
-  color: #fff;
+  color: #fba;
 }
+
 nav {
-  background-color: #abd;
   width: 250px;
   float: left;
 }
+
+nav ul {
+  list-style: none;
+  padding: 0px;
+}
+
 nav a {
   text-decoration: none;
   color: #013;
   display: block;
   padding: 10px;
-  border-bottom: 1px dotted #89d;
+  border-bottom: 1px dotted #89b;
 }
-nav ul {
-  list-style-type: none;
-}
-nav ul :hover {
-  background-color: yellow;
+
+nav a:hover {
+  background-color: #fba;
   color: #910;
   border-left: 10px solid #910;
 }
+
 article {
   background-color: #abd;
 }
+
+/* anak dari elemen article */
 article > * {
   padding: 10px;
   margin-left: 250px;
   background-color: #fff;
+  text-align: justify;
 }
 
-/* h1 {
+#sec02 figure {
+  float: left;
+}
+
+#sec02 figcaption {
   text-align: center;
 }
-header p {
-  text-align: center;
+
+#sec04 table {
+  border-collapse: collapse;
 }
 
-nav {
-  display: flex;
-}
-a {
-  text-decoration: none;
-  justify-content: space-between;
+#sec04 td,
+#sec04 th {
+  border: 1px solid #89b;
+  padding: 10px;
 }
 
-.main {
-  display: flex;
-  justify-content: flex-end;
+#sec04 th {
+  background-color: #457;
+  color: #fff;
 }
-nav {
-  width: 20%;
-  position: fixed;
-  left: 0;
-}
-article {
-  width: 80%;
-} */
