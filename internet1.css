@@ -98,11 +98,11 @@ article > * {
   }
   nav a {
     display: inline;
-    padding: initial;
+    border: none;
   }
   nav a:hover {
     border-right: none;
-
+    background-color: initial;
   }
 }
 
