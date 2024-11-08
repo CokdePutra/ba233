@@ -23,7 +23,7 @@ footer a {
 
 nav {
   width: 250px;
-  float: right;
+  float: left;
 }
 
 nav ul {
@@ -42,7 +42,7 @@ nav a {
 nav a:hover {
   background-color: #fba;
   color: #910;
-  border-left: 10px solid #910;
+  border-right: 10px solid #910;
 }
 
 article {
@@ -52,7 +52,7 @@ article {
 /* anak dari elemen article */
 article > * {
   padding: 10px;
-  margin-right: 250px;
+  margin-left: 250px;
   background-color: #fff;
   text-align: justify;
 }
@@ -78,4 +78,40 @@ article > * {
 #sec04 th {
   background-color: #457;
   color: #fff;
+}
+
+@media (max-width: 800px) {
+  body {
+    width: 100vw;
+  }
+  nav {
+    float: none;
+    width: 100vw;
+    text-align: center;
+  }
+  article > * {
+    margin-left: 0;
+  }
+  nav li {
+    display: inline-block;
+    padding: 0 10px;
+  }
+  nav a {
+    display: inline;
+    padding: initial;
+  }
+  nav a:hover {
+    border-right: none;
+
+  }
+}
+
+@media (max-width: 420px) {
+  section h2 {
+    text-align: center;
+  }
+  #sec02 figure {
+    float: none;
+    text-align: center;
+  }
 }
