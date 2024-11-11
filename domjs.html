@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM JS</title>
+  <style>
+    #content {
+      text-align: justify;
+      margin: auto;
+    }
+    label {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Document Object Model</h1>
+  </header>
+  <main>
+    <section>
+      <div>
+        <input type="text" placeholder="Tuliskan nama anda" autofocus>
+        <button onclick="salam(this)">Salam</button>  
+      </div>
+      <h2></h2>
+    </section>
+    <hr>
+    <section>
+      <label>
+        <input oninput="aturLebar(this)" type="range" value="100">
+        <span>100</span>%
+      </label>
+      <label>
+        <input oninput="aturRotasi(this)" type="range" value="0" max="360">
+        <span>0</span>°
+      </label>
+      <div id="content">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero laborum deserunt, omnis nulla veritatis consequatur voluptatem. Beatae minima possimus a cupiditate alias quia fugiat veniam repellat quaerat blanditiis. Vitae voluptate adipisci cumque consequatur molestiae reprehenderit iusto dolore, rerum magni, laudantium dolorum voluptatem aut at tempore quis, quam recusandae sequi accusamus labore minus! Reprehenderit dolorem, veritatis perspiciatis alias amet labore repellendus minus, quae voluptates excepturi, dicta id illo sed aliquam et dignissimos facere vitae! Dolores veritatis et, pariatur incidunt cupiditate vel similique beatae modi fugit cum quis laboriosam suscipit odit quo magnam, quod sint nam ab quia, rem voluptatem illum provident.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam officiis esse eaque dolor ex aut nesciunt, ullam laborum nam amet. Corporis ex magnam itaque, rem animi quibusdam ipsam sint soluta modi odio distinctio quaerat, nisi ullam iste voluptatem veniam maiores obcaecati voluptate? Laudantium, nostrum excepturi rem saepe eos voluptatum in similique odit molestiae eum voluptates pariatur, magni explicabo iusto autem expedita aliquid. Blanditiis minima deleniti esse vitae repellat ut reiciendis?</p>
+      </div>
+    </section>
+  </main>
+  <script>
+    function aturLebar(e) {
+      let value = aturLabel(e);
+      document.getElementById('content').style.width = value+'%';
+    }
+
+    function aturRotasi(e) {
+      let value = aturLabel(e);
+      document.getElementById('content').style.transform = 'rotate('+value+'deg)'
+    }
+
+    function aturLabel(e) {
+      var value = e.value;
+      e.nextElementSibling.innerText = value;
+      return value;
+    }
+
+    function salam(e) {
+      let nama = e.previousElementSibling.value;
+      let output = e.parentElement.nextElementSibling;
+      if(nama) output.innerText ='Hello, ' + nama;
+      else output.innerText ='';
+    }
+  </script>
+</body>
+</html>
