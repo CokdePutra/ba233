@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+<?php
+session_start();
+
+if(isset($_SESSION['username'])) {
+  header('location:member.php');
+  exit;
+}
+
+?><!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -51,6 +59,16 @@
     a.button:hover {
       background-color: #555;
     }
+    .alert {
+      background-color: #fee;
+      color: #f00;
+      border: 1px solid #f00;
+      border-radius: 5px;
+      text-align: center;
+      padding: 10px;
+      margin-bottom: 10px;
+      width: 290px;
+    }
   </style>
 </head>
 <body>
@@ -59,6 +77,14 @@
   </header>
   <main>
     <form action="validasi.php" method="post">
+<?php
+  if(isset($_SESSION['error'])) {
+    echo '<div class="alert">';
+    echo $_SESSION['error'];
+    echo '</div>';
+    unset($_SESSION['error']);
+  }
+?>
       <div class="row">
         <label for="input-username">Username</label>
         <input type="text" name="username" id="input-username" autofocus required>

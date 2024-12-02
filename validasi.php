@@ -11,6 +11,8 @@ if($username=='admin' && $password=='secret') {
   header('location: member.php');
   exit;
 } else {
+  // berikan pesan error
+  $_SESSION['error'] = 'Username / Password tidak sesuai';
   // pindah ke halaman login
   header('location: login.php');
   exit;

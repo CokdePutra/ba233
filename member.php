@@ -4,9 +4,12 @@ session_start();
 // cek informasi login di session
 // tidak ada informasi login, bawa ke halaman login
 if(!isset($_SESSION['username'])) {
+  $_SESSION['error'] = 'Harap login terlebih dahulu';
   header('location:login.php');
   exit;
 }
+
+$username = $_SESSION['username'];
 
 ?><!DOCTYPE html>
 <html lang="en">
@@ -55,7 +58,7 @@ if(!isset($_SESSION['username'])) {
   </header>
   <main>
     <section>
-      <h2>Selamat Datang</h2>
+      <h2>Selamat Datang, <?= $username ?></h2>
       <p>Lorem ipsum dolor sit amet consectetur.</p>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, quidem minus ut assumenda labore impedit? Dolor, maxime quaerat ex quod reiciendis architecto, velit, vero sint reprehenderit ducimus perspiciatis similique delectus itaque quidem dignissimos facilis eveniet. Ratione sed aut nostrum accusantium deserunt totam magni eos obcaecati, blanditiis nemo optio eligendi vel.</p>
       <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam minima non fugiat itaque autem neque incidunt necessitatibus, sapiente, recusandae nobis dolores rem quisquam cupiditate commodi, iure assumenda ut temporibus? Aperiam?</p>
