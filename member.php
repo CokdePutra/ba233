@@ -1,15 +1,6 @@
 <?php
-session_start();
-
-// cek informasi login di session
-// tidak ada informasi login, bawa ke halaman login
-if(!isset($_SESSION['username'])) {
-  $_SESSION['error'] = 'Harap login terlebih dahulu';
-  header('location:login.php');
-  exit;
-}
-
-$username = $_SESSION['username'];
+require_once 'function.php';
+cek_session();
 
 ?><!DOCTYPE html>
 <html lang="en">
@@ -17,56 +8,21 @@ $username = $_SESSION['username'];
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Member Area</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #333;
-      color: #fff;
-      padding: 10px 0;
-      text-align: center;
-    }
-    main {
-      padding: 20px;
-    }
-    button,
-    a.button {
-      padding: 5px 20px;
-      background-color: #333;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      font-size: large;
-      text-decoration: none;
-    }
-    button:hover,
-    a.button:hover {
-      background-color: #555;
-    }
-    section {
-      margin: 10px 0;
-      padding: 10px 0;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <h1>Member Area</h1>
   </header>
+  <?php show_nav(); ?>
   <main>
-    <section>
-      <h2>Selamat Datang, <?= $username ?></h2>
-      <p>Lorem ipsum dolor sit amet consectetur.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, quidem minus ut assumenda labore impedit? Dolor, maxime quaerat ex quod reiciendis architecto, velit, vero sint reprehenderit ducimus perspiciatis similique delectus itaque quidem dignissimos facilis eveniet. Ratione sed aut nostrum accusantium deserunt totam magni eos obcaecati, blanditiis nemo optio eligendi vel.</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam minima non fugiat itaque autem neque incidunt necessitatibus, sapiente, recusandae nobis dolores rem quisquam cupiditate commodi, iure assumenda ut temporibus? Aperiam?</p>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident id vitae pariatur totam temporibus dolores velit harum? Blanditiis itaque doloremque beatae maxime optio ut, at autem voluptates velit qui voluptatibus animi consequatur, accusantium, enim eaque perferendis soluta laudantium! Hic aperiam ipsa consequuntur unde soluta magnam, laboriosam, deleniti accusantium tenetur officia mollitia fugit iste sunt. Accusantium nisi ad vel deserunt natus veritatis quasi laborum repudiandae ullam est mollitia eos quis impedit eligendi, porro optio odio ut velit ea perferendis quo architecto. Iure voluptates laboriosam omnis molestias quis doloremque maxime cum perferendis!</p>
-    </section>
-    <section>
-      <a href="logout.php" class="button">Logout</a>
-    </section>
+    <h2>Selamat Datang, <?= $_SESSION['user']['username'] ?></h2>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate, omnis eveniet. Quia consectetur, nemo nisi molestias fuga, saepe consequatur reiciendis asperiores nostrum nobis debitis fugiat ipsam quasi molestiae harum voluptas!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis consectetur magni eligendi tempora earum quisquam deleniti aspernatur! Sint reiciendis blanditiis rem placeat sequi sed inventore saepe omnis in aperiam provident neque earum quas, amet error officia quaerat dolor corrupti, assumenda totam sunt? Incidunt, nisi quis aut quam nostrum eius necessitatibus!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, nisi.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus repellendus explicabo, commodi ratione perferendis magni suscipit repudiandae, exercitationem et tempora saepe quos officia odit nemo, maxime dolorum obcaecati impedit totam dolores ad rem. Sit consectetur molestiae praesentium sequi iure saepe cum architecto autem et id, maxime pariatur alias recusandae. Tenetur deserunt beatae quas, provident tempora et corrupti cumque similique amet aut nisi nulla eligendi aliquam modi minus voluptas maxime. Autem et earum dolores, repellendus dignissimos assumenda id alias cum, voluptas veritatis distinctio delectus sint! Placeat architecto dolor molestiae fugit quas voluptatibus, maxime id nisi impedit veniam, minus facere, asperiores sit.</p>
+    <hr>
+    <a class="btn-link" href="logout.php">Logout</a>
   </main>
 </body>
 </html>

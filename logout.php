@@ -1,7 +1,9 @@
 <?php
-session_start();
+require_once 'function.php';
 
-unset($_SESSION['username']);
+// hapus session
+unset($_SESSION['user']);
 
+// redirect ke halaman login
 header('location: login.php');
 exit;
