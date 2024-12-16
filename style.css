@@ -140,3 +140,32 @@ ul#f-list li a:hover {
   display: inline-block;
   text-align: right;
 }
+
+ul.file-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.file-list li {
+  padding: 5px 0;
+}
+
+ul.file-list li:hover {
+  background-color: #ddd
+}
+
+a.file-name {
+  text-decoration: none;
+  color: #333;
+  display: inline-block;
+  width: 70%;
+  /* handling long file names */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+a.file-name:hover {
+  text-decoration: underline;
+}
