@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar Belanja</title>
+  <style>
+    .dt-blj {
+      list-style: none;
+      padding: 0;
+    }
+    .dt-blj input {
+      border: none;
+      border-bottom: 1px dotted #999;
+      width: 80%;
+      font-size: x-large;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Daftar Belanja</h1>
+  </header>
+  <main>
+    <button class="btn-plus"> + </button>
+    <ul class="dt-blj">
+      <li>
+        <button class="btn-min"> - </button>
+        <input type="text" autofocus>
+      </li>
+    </ul>
+  </main>
+  <script>
+  document
+    .querySelector('.btn-plus')
+    .addEventListener('click', addItem);
+
+  document
+    .querySelector('.btn-min + input')
+    .addEventListener('change', addItem);
+
+  document
+    .querySelector('.btn-min')
+    .addEventListener('click', removeItem);
+
+  function removeItem() {
+    // mengambil elemen li
+    let li = this.parentElement;
+
+    // mengambil elemen ul
+    let ul = li.parentElement;
+
+    // menghapus li dari ul
+    ul.removeChild(li);
+  }
+
+  function addItem() {
+    // mengambil elemen ul
+    let ul = document.querySelector('.dt-blj');
+
+    // membuat elemen yang diperlukan (li, btnMin, input)
+    let li = document.createElement('li');
+    let btnMin = document.createElement('button');
+    let input = document.createElement('input');
+
+    // mengatur btnMin
+    btnMin.classList.add('btn-min'); // menambahkan class btn-min ke btnMin
+    btnMin.innerHTML = ' - '; // menambahkan isi html (' - ') ke btnMin
+    btnMin.addEventListener('click', removeItem); // menambahkan event listener click ke btnMin
+    
+    // mengatur input
+    input.type = 'text'; // mengatur tipe input menjadi text
+    input.addEventListener('change', addItem); // menambahkan event listener change ke input
+
+    // memasukkan btnMin dan input ke dalam li
+    li.appendChild(btnMin); // memasukkan btnMin ke dalam li
+    li.appendChild(input); // memasukkan input ke dalam li
+
+    // memasukkan li ke dalam ul
+    ul.appendChild(li);
+
+    // memberikan focus ke input
+    input.focus();
+  }
+  </script>
+</body>
+</html>
