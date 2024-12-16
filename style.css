@@ -169,3 +169,22 @@ a.file-name {
 a.file-name:hover {
   text-decoration: underline;
 }
+
+span.file-size {
+  display: inline-block;
+  width: 20%;
+  text-align: right;
+  color: #333;
+  font-style: italic;
+}
+
+a.file-delete {
+  color: #ccc;
+  text-align: right;
+  display: inline-block;
+  width: 10%;
+}
+
+a.file-delete:hover {
+  color: #f00;
+}
