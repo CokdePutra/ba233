@@ -6,6 +6,15 @@ const DB_USER = 'webuser';
 const DB_PASS = 'webuser';
 const DB_NAME = 'ba233';
 
+@$NAVLIST = [
+  ['Home', 'member.php'],
+  ['Users', 'user.php'],
+  ['Add', 'new.php'],
+  ['Storage', 'download.php'],
+  ['Profile', 'detail.php?id='.$_SESSION['user']['id']],
+  ['Logout', 'logout.php'],
+];
+
 $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME) or die('Koneksi Gagal');
 
 function db_query($sql) {
@@ -25,13 +34,12 @@ function cek_session($kondisi = false) {
 }
 
 function show_nav() {
+  global $NAVLIST;
   echo '<nav> ';
   echo '<ul> ';
-  echo '<li><a href="member.php">Home</a></li> ';
-  echo '<li><a href="user.php">Users</a></li> ';
-  echo '<li><a href="new.php">Add</a></li> ';
-  echo '<li><a href="detail.php?id='.$_SESSION['user']['id'].'">Profile</a></li> ';
-  echo '<li><a href="logout.php">Logout</a></li> ';
+  foreach($NAVLIST as $menu) {
+    echo '<li><a href="'.$menu[1].'">'.$menu[0].'</a></li> ';
+  }
   echo '</ul> ';
   echo '</nav> ';
 }

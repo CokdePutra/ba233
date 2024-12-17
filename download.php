@@ -1,4 +1,7 @@
 <?php
+require_once 'function.php';
+cek_session();
+
 // pindah direktory
 chdir('storage');
 
@@ -17,6 +20,7 @@ $files = scandir(getcwd());
   <header>
     <h1>Simple Online Storage</h1>
   </header>
+  <?php show_nav() ?>
   <main>
     <section>
       <h2>Upload</h2>

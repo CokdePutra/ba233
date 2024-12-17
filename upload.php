@@ -1,4 +1,7 @@
 <?php
+require_once 'function.php';
+cek_session();
+
 chdir('storage');
 
 $berkas = $_FILES['berkas'];
