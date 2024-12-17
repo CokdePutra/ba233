@@ -6,12 +6,12 @@ const DB_USER = 'webuser';
 const DB_PASS = 'webuser';
 const DB_NAME = 'ba233';
 
-@$NAVLIST = [
+const NAV_LIST = [
   ['Home', 'member.php'],
   ['Users', 'user.php'],
   ['Add', 'new.php'],
   ['Storage', 'download.php'],
-  ['Profile', 'detail.php?id='.$_SESSION['user']['id']],
+  ['Profile', 'profile.php'],
   ['Logout', 'logout.php'],
 ];
 
@@ -34,10 +34,9 @@ function cek_session($kondisi = false) {
 }
 
 function show_nav() {
-  global $NAVLIST;
   echo '<nav> ';
   echo '<ul> ';
-  foreach($NAVLIST as $menu) {
+  foreach(NAV_LIST as $menu) {
     echo '<li><a href="'.$menu[1].'">'.$menu[0].'</a></li> ';
   }
   echo '</ul> ';
