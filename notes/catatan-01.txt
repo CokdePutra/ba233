@@ -1,0 +1,3 @@
+ini contoh isi file catatan dot txt
+
+ini ditambahkan dari web
